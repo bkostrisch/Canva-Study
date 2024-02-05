@@ -2,49 +2,66 @@ let screen = document.getElementById("screen");
 
 let ctx = screen.getContext("2d");
 
-let circle = {
+let img = new Image();
+img.src = "./img/Cat.png";
 
-     x: 250,
-     y: 250,
-     r: 100,    
-     begin: 0,
-     end: 0,
+img.onload = drawImg;
+
+function drawImg() {
+
+
+    ctx.drawImage(this, 250, 200, this.naturalWidth/2 , this.naturalHeight/2);
+
+
 }
 
-function drawCircle (c) {
 
-    ctx.beginPath();
-    ctx.rect(0, 0, 650 , 500);
-    ctx.fillStyle = "#B9EEF3";
-    ctx.fill();
 
-    ctx.beginPath();
-    ctx.strokeStyle = "#A98C16";
-    ctx.arc( c.x, c.y, c.r, c.begin, c.end);
-    ctx.fillStyle = "#FDDA4C";
+
+// Animated Circle
+// let circle = {
+
+//      x: 250,
+//      y: 250,
+//      r: 100,    
+//      begin: 0,
+//      end: 0,
+// }
+
+// function drawCircle (c) {
+
+//     ctx.beginPath();
+//     ctx.rect(0, 0, 650 , 500);
+//     ctx.fillStyle = "#B9EEF3";
+//     ctx.fill();
+
+//     ctx.beginPath();
+//     ctx.strokeStyle = "#A98C16";
+//     ctx.arc( c.x, c.y, c.r, c.begin, c.end);
+//     ctx.fillStyle = "#FDDA4C";
     
-    ctx.fill();
-    ctx.stroke();
+//     ctx.fill();
+//     ctx.stroke();
 
-}
+// }
 
-drawCircle(circle);
+// drawCircle(circle);
 
-setInterval(function(){
-
-
-    if (circle.end < 2 * Math.PI){
-
-        circle.end += 0.1;
-        circle.x += 1;
-        circle.y -= 1;
-
-    }
-
-    drawCircle(circle);
+// setInterval(function(){
 
 
-},10)
+//     if (circle.end < 2 * Math.PI){
+
+//         circle.end += 0.1;
+//         circle.x += 1;
+//         circle.y -= 1;
+
+//     }
+
+//     drawCircle(circle);
+
+
+// },10)
 
 
 

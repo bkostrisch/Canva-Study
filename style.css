@@ -1,6 +1,11 @@
-/* #screen {
+#screen {
 
     background-color: pink;
 
 
-} */
+}
+
+.cat {
+
+    display: none;
+}
