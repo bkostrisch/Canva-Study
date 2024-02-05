@@ -2,24 +2,54 @@ let screen = document.getElementById("screen");
 
 let ctx = screen.getContext("2d");
 
+let circle = {
 
-let x = 250;
-let y = 250;
-let r = 100;
+     x: 250,
+     y: 250,
+     r: 100,    
+     begin: 0,
+     end: 0,
+}
 
-let begin = 0;
-let end = 2 * Math.PI;
+function drawCircle (c) {
 
-ctx.beginPath();
-ctx.strokeStyle = "purple";
-ctx.arc(x,y, r, begin, end);
-ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.rect(0, 0, 650 , 500);
+    ctx.fillStyle = "#B9EEF3";
+    ctx.fill();
 
-ctx.fill();
-ctx.stroke();
+    ctx.beginPath();
+    ctx.strokeStyle = "#A98C16";
+    ctx.arc( c.x, c.y, c.r, c.begin, c.end);
+    ctx.fillStyle = "#FDDA4C";
+    
+    ctx.fill();
+    ctx.stroke();
+
+}
+
+drawCircle(circle);
+
+setInterval(function(){
 
 
-// Understanding how Paths work
+    if (circle.end < 2 * Math.PI){
+
+        circle.end += 0.1;
+        circle.x += 1;
+        circle.y -= 1;
+
+    }
+
+    drawCircle(circle);
+
+
+},10)
+
+
+
+
+// Understanding how Path works
 // ctx.beginPath();
 
 // ctx.lineWidth = 4;
