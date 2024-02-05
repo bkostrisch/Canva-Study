@@ -1,8 +1,28 @@
 let screen = document.getElementById("screen");
 
 let ctx = screen.getContext("2d");
-let ctx2 = screen.getContext("2d");
-let ctx3 = screen.getContext("2d");
+
+
+ctx.beginPath();
+
+ctx.lineWidth = 4;
+ctx.strokeStyle = "purple";
+ctx.moveTo(10, 10);
+ctx.lineTo(500, 400);
+ctx.stroke();
+
+
+ctx.beginPath();
+
+ctx.lineWidth = 7;
+ctx.strokeStyle = "blue";
+ctx.fillStyle= "white";
+ctx.moveTo(50, 10);
+ctx.lineTo(300, 300);
+ctx.lineTo(100, 300);
+ctx.closePath();
+ctx.fill();
+ctx.stroke();
 
 
 
@@ -16,7 +36,7 @@ let ctx3 = screen.getContext("2d");
 // ctx.fillRect(20, 20, 100, 200)
 
 
-//Rectangle with border and cut part
+// Rectangle with border and cut part
 // ctx.rect(20, 20, 100, 200)
 // ctx.strokeStyle = "white";
 // ctx.fillStyle = "purple";
@@ -27,6 +47,9 @@ let ctx3 = screen.getContext("2d");
 
 
 // Carta desenhada
+// let ctx = screen.getContext("2d");
+// let ctx2 = screen.getContext("2d");
+// let ctx3 = screen.getContext("2d");
 // ctx.lineWidth = 3;
 // ctx.strokeStyle = "#FF98AE";
 // ctx.moveTo(0,0);
