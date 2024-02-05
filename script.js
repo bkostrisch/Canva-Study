@@ -3,26 +3,43 @@ let screen = document.getElementById("screen");
 let ctx = screen.getContext("2d");
 
 
-ctx.beginPath();
+let x = 250;
+let y = 250;
+let r = 100;
 
-ctx.lineWidth = 4;
+let begin = 0;
+let end = 2 * Math.PI;
+
+ctx.beginPath();
 ctx.strokeStyle = "purple";
-ctx.moveTo(10, 10);
-ctx.lineTo(500, 400);
-ctx.stroke();
+ctx.arc(x,y, r, begin, end);
+ctx.fillStyle = "white";
 
-
-ctx.beginPath();
-
-ctx.lineWidth = 7;
-ctx.strokeStyle = "blue";
-ctx.fillStyle= "white";
-ctx.moveTo(50, 10);
-ctx.lineTo(300, 300);
-ctx.lineTo(100, 300);
-ctx.closePath();
 ctx.fill();
 ctx.stroke();
+
+
+// Understanding how Paths work
+// ctx.beginPath();
+
+// ctx.lineWidth = 4;
+// ctx.strokeStyle = "purple";
+// ctx.moveTo(10, 10);
+// ctx.lineTo(500, 400);
+// ctx.stroke();
+
+
+// ctx.beginPath();
+
+// ctx.lineWidth = 7;
+// ctx.strokeStyle = "blue";
+// ctx.fillStyle= "white";
+// ctx.moveTo(50, 10);
+// ctx.lineTo(300, 300);
+// ctx.lineTo(100, 300);
+// ctx.closePath();
+// ctx.fill();
+// ctx.stroke();
 
 
 
